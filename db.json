@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "name": "Anton Alvares",
+      "tel": "+380963854475",
+      "id": 1
+    },
+    {
+      "name": "Eduard Ivanov",
+      "tel": "+380963854477",
+      "id": 2
+    }
+  ]
+}
