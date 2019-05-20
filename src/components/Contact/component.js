@@ -9,7 +9,8 @@ function Contact(props) {
         <img src={emptyProfile} alt='' />
       </div>
       <div className='contact-name'>
-        <p>{props.contact.name}</p>
+        <p>{props.contact.firstName} {props.contact.lastName}</p>
+        <p>{props.contact.tel}</p>
       </div>
     </div>
   );

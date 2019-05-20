@@ -1,12 +1,19 @@
 import React from 'react';
+import './component.scss';
 
 import ContactList from '../../components/ContactList/component';
+import AddButton from '../../components/AddButton/component';
 
 function Home() {
   return (
     <React.Fragment>
-      <h2>Contact List</h2>
-      <ContactList />
+      <header> 
+        <h2>Contact List</h2>
+        <AddButton />
+      </header>
+      <main>
+        <ContactList />
+      </main>
     </React.Fragment>
   );
 }

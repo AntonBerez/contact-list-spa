@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { contactsFetchData } from '../../actions/contacts'
+import { contactsFetchData } from '../../actions/contacts';
 
 import Contact from '../Contact/component';
 
