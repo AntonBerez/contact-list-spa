@@ -2,57 +2,9 @@
   "contacts": [
     {
       "firstName": "Anton",
-      "lastName": "Ber2",
-      "tel": "+380963854475",
-      "id": 2
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber3",
-      "tel": "+380963854475",
-      "id": 3
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber4",
-      "tel": "+380963854475",
-      "id": 4
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber5",
-      "tel": "+380963854475",
-      "id": 5
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber6",
-      "tel": "+380963854475",
-      "id": 6
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber7",
-      "tel": "+380963854475",
-      "id": 7
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "Ber8",
-      "tel": "+380963854475",
-      "id": 8
-    },
-    {
-      "firstName": "Anton",
       "lastName": "Ber9",
       "tel": "+380963854475",
       "id": 9
-    },
-    {
-      "firstName": "Anton",
-      "lastName": "B10",
-      "tel": "+380963854475",
-      "id": 10
     },
     {
       "firstName": "Anton",
@@ -71,6 +23,18 @@
       "lastName": "Ivanov",
       "tel": "+380854578787",
       "id": 13
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Ded",
+      "tel": "3232",
+      "id": 14
+    },
+    {
+      "firstName": "OLeg",
+      "lastName": "Chan",
+      "tel": "2132",
+      "id": 15
     }
   ]
 }

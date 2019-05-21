@@ -1,9 +1,23 @@
-export function contacts(state = [], action) {
+const initialState = {
+  contacts: [],
+  contactCreated: false
+}
+
+export function contacts(state = initialState, action) {
   switch (action.type) {
     case 'RECEIVE_CONTACTS':
-      return action.contacts;
+      return Object.assign({}, state, {
+        contacts: action.contacts,
+        contactCreated: false
+      });
     case 'DELETE_CONTACT':
-      return state.filter((contact) => contact.id !== action.id)
+      return Object.assign({}, state, {
+        contacts: state.contacts.filter((contact) => contact.id !== action.id)
+      });
+    case 'CREATE_CONTACT':
+      return Object.assign({}, state, {
+        contactCreated: true
+      })
 
     default:
       return state;

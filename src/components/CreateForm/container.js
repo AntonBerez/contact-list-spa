@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { createContact } from '../../actions/contacts';
 
 import CreateForm from './component';
 
@@ -20,16 +22,13 @@ const apiUrl = 'http://localhost:3001/contacts';
 
 class CreateFormContainer extends React.Component {
   createContact = (values) => {
-    fetch(apiUrl, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: "POST",
-      body: JSON.stringify(values)
-    })
-      .then((response) => response.json())
-      .then(() => this.props.history.push('/'))
+    this.props.createContact(values, apiUrl);
+  }
+
+  componentDidUpdate() {
+    if (this.props.contactCreated) {
+      this.props.history.push('/')
+    }
   }
 
   render() {
@@ -45,4 +44,16 @@ class CreateFormContainer extends React.Component {
   }
 }
 
-export default withRouter((CreateFormContainer));
+const mapStateToProps = (state) => {
+  return {
+    contactCreated: state.contacts.contactCreated
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createContact: (values, url) => dispatch(createContact(values, url))
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateFormContainer));

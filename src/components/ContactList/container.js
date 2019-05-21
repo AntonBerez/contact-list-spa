@@ -26,7 +26,7 @@ class ContactListContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contacts,
+    contacts: state.contacts.contacts,
     link: state.getLink
   };
 };

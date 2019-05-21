@@ -20,6 +20,26 @@ export function getContacts(url) {
   };
 }
 
+export function createContact(values, url) {
+  return (dispatch) => {
+    fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(values)
+    })
+      .then((response) => {
+        if(response.status === 201) {
+          dispatch({
+            type: 'CREATE_CONTACT'
+          })
+        }
+      })
+  }
+}
+
 export function deleteContact(id) {
   return (dispatch) => {
     fetch(`http://localhost:3001/contacts/${id}`, {
