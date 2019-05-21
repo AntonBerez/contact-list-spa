@@ -2,6 +2,9 @@ import React from 'react';
 import './component.scss';
 import { Field, reduxForm } from 'redux-form';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import MainButton from '../shared/MainButton/component'
 
 const required = value => value ? undefined : 'Required';
 const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined
@@ -32,7 +35,7 @@ class CreateForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className='create-form' onSubmit={this.props.handleSubmit(this.createContact)}>
         <Field
           name="firstName"
           component={renderField}
@@ -55,8 +58,10 @@ class CreateForm extends React.Component {
           validate={[required, number]}
         />
         <div className="btns-container">
-          <button>Cancel</button>
-          <button onClick={this.props.handleSubmit(this.createContact)} disabled={this.props.pristine}>Create</button>
+          <Link to='/'>
+            <MainButton type='button' name='Cancel' />
+          </Link>
+          <MainButton type='submit' name='Create' />
         </div>
       </form>
     )

@@ -1,4 +1,4 @@
-form {
+.create-form {
   .input-field {
     margin-bottom: 15px;
     input {
@@ -8,5 +8,9 @@ form {
     .error {
       color: red;
     }
+  }
+  .btns-container {
+    display: flex;
+    justify-content: space-between;
   }
 }

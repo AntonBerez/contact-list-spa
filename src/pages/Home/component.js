@@ -1,20 +1,23 @@
 import React from 'react';
 import './component.scss';
+import { Link } from 'react-router-dom';
 
 import ContactList from '../../components/ContactList/component';
-import AddButton from '../../components/AddButton/component';
+import MainButton from '../../components/shared/MainButton/component';
 
 function Home() {
   return (
-    <React.Fragment>
+    <div className="home">
       <header> 
         <h2>Contact List</h2>
-        <AddButton />
+        <Link to='/create'>
+          <MainButton type='button' name='Add new contact' />
+        </Link>
       </header>
       <main>
         <ContactList />
       </main>
-    </React.Fragment>
+    </div>
   );
 }
 
