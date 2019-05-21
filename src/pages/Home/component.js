@@ -2,8 +2,8 @@ import React from 'react';
 import './component.scss';
 import { Link } from 'react-router-dom';
 
-import ContactList from '../../components/ContactList/component';
-import MainButton from '../../components/shared/MainButton/component';
+import { ContactList } from '../../components/ContactList';
+import { MainButton } from '../../components/shared/MainButton';
 
 function Home() {
   return (

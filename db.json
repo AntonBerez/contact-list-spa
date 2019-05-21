@@ -2,12 +2,6 @@
   "contacts": [
     {
       "firstName": "Anton",
-      "lastName": "Ber",
-      "tel": "+380963854475",
-      "id": 1
-    },
-    {
-      "firstName": "Anton",
       "lastName": "Ber2",
       "tel": "+380963854475",
       "id": 2
@@ -71,6 +65,12 @@
       "lastName": "Ber12",
       "tel": "+380963854475",
       "id": 12
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "tel": "+380854578787",
+      "id": 13
     }
   ]
 }
