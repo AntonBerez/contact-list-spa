@@ -1,9 +1,23 @@
 import React from 'react';
+import './component.scss';
 import { Field, reduxForm } from 'redux-form';
 import { withRouter } from 'react-router-dom';
 
+const required = value => value ? undefined : 'Required';
+const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined
+
+const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+  <div className="input-field">
+    <label>{label}</label>
+    <div>
+      <input {...input} placeholder={label} type={type}/>
+      {touched && ((error && <span className="error">{error}</span>) || (warning && <span className="error">{warning}</span>))}
+    </div>
+  </div>
+)
+
 class CreateForm extends React.Component {
-  sentRequest = (values) => {
+  createContact = (values) => {
     fetch('http://localhost:3001/contacts', {
       headers: {
         'Accept': 'application/json',
@@ -18,26 +32,32 @@ class CreateForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.sentRequest)}>
+      <form>
         <Field
           name="firstName"
-          component="input"
+          component={renderField}
           type="text"
-          placeholder="First Name"
+          label="First Name"
+          validate={required}
         />
         <Field
           name="lastName"
-          component="input"
+          component={renderField}
           type="text"
-          placeholder="Last Name"
+          label="Last Name"
+          validate={required}
         />
         <Field
           name="tel"
-          component="input"
+          component={renderField}
           type="tel"
-          placeholder="Tel"
+          label="Phone"
+          validate={[required, number]}
         />
-        <button type="submit" disabled={this.props.pristine}>Submit</button>
+        <div className="btns-container">
+          <button>Cancel</button>
+          <button onClick={this.props.handleSubmit(this.createContact)} disabled={this.props.pristine}>Create</button>
+        </div>
       </form>
     )
   }
