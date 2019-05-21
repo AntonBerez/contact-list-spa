@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { contacts } from './contacts';
+import { contacts, getLink } from './contacts';
 import { reducer as reduxFormReducer } from 'redux-form';
 
 export default combineReducers({
   form: reduxFormReducer,
-  contacts
+  contacts,
+  getLink
 });

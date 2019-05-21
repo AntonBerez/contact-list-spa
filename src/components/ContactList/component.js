@@ -1,21 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { contactsFetchData } from '../../actions/contacts';
+import { getContacts } from '../../actions/contacts';
 
 import Contact from '../Contact/component';
+
+const initUrl = 'http://localhost:3001/contacts?_page=1&_limit=5';
 
 class ContactList extends React.Component {
 
   componentDidMount() {
-    this.props.fetchContacts();
+    this.props.fetchContacts(initUrl);
+  }
+
+  handlePginationClick = (url) => {
+    this.props.fetchContacts(url);
   }
 
   render() {
+    const { link } = this.props;
     return (
       <React.Fragment>
         {this.props.contacts.map((contact) => (
           <Contact key={contact.id} contact={contact} />
         ))}
+        <div className='pagination'>
+          {link.prev ? <span onClick={() => this.handlePginationClick(link.prev.url)}>{link.prev.rel}</span> : null}
+          {link.next ? <span onClick={() => this.handlePginationClick(link.next.url)}>{link.next.rel}</span> : null}
+        </div>
       </React.Fragment>
     )
   }
@@ -23,13 +34,14 @@ class ContactList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contacts
+    contacts: state.contacts,
+    link: state.getLink
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchContacts: () => dispatch(contactsFetchData())
+    fetchContacts: (url) => dispatch(getContacts(url))
   };
 };
 

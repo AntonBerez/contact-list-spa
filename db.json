@@ -7,34 +7,40 @@
       "id": 1
     },
     {
-      "firstName": "Vova",
-      "lastName": "Ivanov",
-      "tel": "+380930654785",
+      "firstName": "Anton",
+      "lastName": "Ber2",
+      "tel": "+380963854475",
       "id": 2
     },
     {
       "firstName": "Anton",
-      "lastName": "Ber",
+      "lastName": "Ber3",
       "tel": "+380963854475",
       "id": 3
     },
     {
-      "firstName": "Vova",
-      "lastName": "Ivanov",
-      "tel": "+380930654785",
+      "firstName": "Anton",
+      "lastName": "Ber4",
+      "tel": "+380963854475",
       "id": 4
     },
     {
       "firstName": "Anton",
-      "lastName": "Ber",
+      "lastName": "Ber5",
       "tel": "+380963854475",
       "id": 5
     },
     {
-      "firstName": "Vova",
-      "lastName": "Ivanov",
-      "tel": "+380930654785",
+      "firstName": "Anton",
+      "lastName": "Ber6",
+      "tel": "+380963854475",
       "id": 6
+    },
+    {
+      "firstName": "Anton",
+      "lastName": "Ber7",
+      "tel": "+380963854475",
+      "id": 7
     }
   ]
 }

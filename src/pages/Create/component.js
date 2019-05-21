@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SimpleForm from '../../components/CreateForm/component';
+import CreateForm from '../../components/CreateForm/component';
 
 
 class Create extends React.Component {
@@ -12,7 +12,7 @@ class Create extends React.Component {
           <h2>Create new contact</h2>
         </header>
         <main>
-          <SimpleForm />
+          <CreateForm />
         </main>
       </React.Fragment>
     )
