@@ -1,0 +1,16 @@
+.edit-form {
+  .input-field {
+    margin-bottom: 15px;
+    input {
+      width: 100%;
+      padding: 5px;
+    }
+    .error {
+      color: red;
+    }
+  }
+  .btns-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

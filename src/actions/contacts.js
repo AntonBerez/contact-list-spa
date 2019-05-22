@@ -1,4 +1,5 @@
 import parseLink from 'parse-link-header';
+const LOAD_CONTACT = 'redux-form-examples/account/LOAD';
 
 export function getContacts(url) {
   return (dispatch) => {
@@ -53,5 +54,36 @@ export function deleteContact(id) {
           })
         }
       })
+  };
+}
+
+export function getIdForEdit(id) {
+  return (dispatch) => {
+    dispatch({
+      type: 'GET_ID_FOR_EDIT',
+      id: id
+    })
+  };
+}
+
+export function loadContact(data) {
+  return {
+    type: LOAD_CONTACT,
+    data
+  }
+}
+
+export function getContact(url , id) {
+  return (dispatch) => {
+    fetch(`${url}/${id}`)
+      .then((response) => response.json())
+      .then((contact) => {
+        dispatch({
+          type: 'RECEIVE_CONTACT',
+          contact: contact
+        })
+        return contact;
+      })
+      .then((contact) => dispatch(loadContact(contact)))
   };
 }
