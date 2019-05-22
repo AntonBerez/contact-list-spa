@@ -32,7 +32,7 @@ export function createContact(values, url) {
       body: JSON.stringify(values)
     })
       .then((response) => {
-        if(response.status === 201) {
+        if (response.status === 201) {
           dispatch({
             type: 'CREATE_CONTACT'
           })
@@ -66,10 +66,23 @@ export function getIdForEdit(id) {
   };
 }
 
-export function loadContact(data) {
-  return {
-    type: LOAD_CONTACT,
-    data
+export function editContact(values, id) {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/contacts/${id}`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'PUT',
+      body: JSON.stringify(values)
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          dispatch({
+            type: 'EDIT_CONTACT'
+          })
+        }
+      })
   }
 }
 
@@ -84,6 +97,9 @@ export function getContact(url , id) {
         })
         return contact;
       })
-      .then((contact) => dispatch(loadContact(contact)))
+      .then((contact) => dispatch({
+        type: LOAD_CONTACT,
+        data: contact
+      }))
   };
 }

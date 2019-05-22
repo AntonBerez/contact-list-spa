@@ -1,7 +1,8 @@
 const initialState = {
   contacts: [],
   contact: '',
-  contactCreated: false
+  contactCreated: false,
+  contactEdited: false
 }
 
 export function contacts(state = initialState, action) {
@@ -10,6 +11,7 @@ export function contacts(state = initialState, action) {
       return Object.assign({}, state, {
         contacts: action.contacts,
         contactCreated: false,
+        contactEdited: false,
         contact: ''
       });
     case 'DELETE_CONTACT':
@@ -23,6 +25,10 @@ export function contacts(state = initialState, action) {
     case 'RECEIVE_CONTACT':
       return Object.assign({}, state, {
         contact: action.contact
+      })
+    case 'EDIT_CONTACT':
+      return Object.assign({}, state, {
+        contactEdited: true
       })
 
     default:
