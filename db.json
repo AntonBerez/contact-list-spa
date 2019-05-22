@@ -1,6 +1,24 @@
 {
   "contacts": [
     {
+      "firstName": "Anton4",
+      "lastName": "Ber9",
+      "tel": "+380963854475",
+      "id": 4
+    },
+    {
+      "firstName": "Anton",
+      "lastName": "Ber9",
+      "tel": "+380963854475",
+      "id": 6
+    },
+    {
+      "firstName": "Anton",
+      "lastName": "Ber9",
+      "tel": "+380963854475",
+      "id": 8
+    },
+    {
       "firstName": "Anton",
       "lastName": "Ber9",
       "tel": "+380963854475",

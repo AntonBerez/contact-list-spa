@@ -1,6 +1,7 @@
 import React from 'react';
 import './component.scss';
 import emptyProfile from '../../assets/profile-empty.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Contact(props) {
   return (
@@ -11,7 +12,9 @@ function Contact(props) {
       <div className='contact-name'>
         <p>{props.contact.firstName} {props.contact.lastName}</p>
         <p>{props.contact.tel}</p>
-        <span onClick={() => {props.handleDeleteContact(props.contact.id)}}>del</span>
+        <span className='delete-icon' onClick={() => {props.handleDeleteContact(props.contact.id)}}>
+          <FontAwesomeIcon icon="trash" />
+        </span>
       </div>
     </div>
   )

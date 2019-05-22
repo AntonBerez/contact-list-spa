@@ -1,6 +1,19 @@
 .contact-list {
   .pagination {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    .btn {
+      position: absolute;
+      cursor: pointer;
+      background-color: #999;
+      padding: 3px 10px;
+      color: #fff;
+      height: 30px;
+      &.prev-btn {
+        left: 0;
+      }
+      &.next-btn {
+        right: 0;
+      }
+    }
   }
 }
