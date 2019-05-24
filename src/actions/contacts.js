@@ -18,6 +18,9 @@ export function getContacts(url) {
         type: 'RECEIVE_CONTACTS',
         contacts: contacts
       }))
+      .then(() => dispatch({
+        type: 'CLEAR_LOADED_CONTACT'
+      }))
   };
 }
 

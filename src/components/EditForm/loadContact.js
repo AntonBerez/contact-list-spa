@@ -6,6 +6,8 @@ const loadContact = (state = {}, action) => {
       return {
         data: action.data,
       };
+    case 'CLEAR_LOADED_CONTACT':
+      return {};
     
     default:
       return state;
